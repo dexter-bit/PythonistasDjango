@@ -1,0 +1,179 @@
+@font-face {
+
+	font-family: Pipboy;
+	src: url('../monofonto.ttf');
+}
+
+
+body {
+	
+	font-family: Pipboy, sans-serif;
+
+}
+
+.navbar {
+
+	border-bottom: 1px solid;
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	background: white;
+	border-bottom: 1px solid;
+
+}
+
+
+.nav-text {
+
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+ .containerblb {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+ .containerblb .blurb {
+	background: #fff;
+	border: 6px double #eaeaea;
+	padding: 0.225rem;
+	text-align: center;
+	width: 75%;
+}
+
+ .containerblb .blurb h3 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 2.6875;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #eaeaea;
+	margin-top: 10px;
+}
+
+ .containerblb .blurb p {
+	font-size: 1rem;
+	color: #777;
+	margin: 10px;
+}
+
+
+.data {
+
+	padding: 5.625rem 0 11.875rem 0;
+	position: relative;
+	background-image: url('../css/img/pizza.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat
+}
+
+.data .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(20, 22, 24, .3);
+	top: 0;
+	z-index: 1
+}
+
+.container-edit {
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.card {
+
+	margin: 30px;
+
+}
+
+.card-title {
+
+	text-align: center;
+
+}
+
+.card-text {
+
+	margin-bottom: 1.425rem;
+
+}
+
+.form-group {
+
+	display: grid;
+    grid-template-columns: auto 30px 45px 30px;
+
+}
+
+.center-btn {
+
+	margin-top: 29px;
+    margin-left: 50%;
+    margin-bottom: 0px;
+    transform: translate(-50%, -50%);
+
+}
+
+
+#myform {
+	text-align: center;
+	padding: 5px;
+	border: 1px dotted #ccc;
+	margin: 2%;
+}
+
+.qty {
+	width: 40px;
+	height: 25px;
+	text-align: center;
+}
+
+input.qtyplus {
+	width: 25px;
+	height: 25px;
+}
+
+input.qtyminus {
+	width: 25px;
+	height: 25px;
+}
+
+footer {
+	margin-top: 2.25rem;
+	background: #141618;
+	padding: 3.625rem 0;
+	text-align: center;
+	color: #fff
+}
+
+footer .bot {
+	margin-top: 1.25rem
+}
+
+footer .bot a {
+	color: #fff;
+	padding: 0 .5625rem;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	text-decoration: none;
+}
+
+footer .bot a:hover {
+	color: #b4975a
+}
+
+@media (max-width: 600px) {
+
+	.card {
+		margin: 0px;
+	}
+
+}
