@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pizza</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<p>hola desde pizza!</p>
+		<input type="text" name="ejemplo" id="ejemplo">
+		<button type="submit">Subir</button>
+	</form>	
+</body>
+</html>

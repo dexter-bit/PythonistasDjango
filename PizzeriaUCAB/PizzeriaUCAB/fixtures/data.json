@@ -1,0 +1,249 @@
+[
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Jamon",
+      "price": 10
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Maiz",
+      "price": 30
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Queso",
+      "price": 30
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Champiñon",
+      "price": 30
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Aceite",
+      "price": 30
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Pepperoni",
+      "price": 30
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Ingredient",
+    "pk": 7,
+    "fields": {
+      "name": "Salami",
+      "price": 30
+    }
+  },
+
+
+
+  {
+    "model": "PizzeriaUCAB.Client",
+    "pk": 2,
+    "fields": {
+      "name": "Luis"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Client",
+    "pk": 3,
+    "fields": {
+      "name": "Angel"
+    }
+  },
+
+
+
+  {
+    "model": "PizzeriaUCAB.Order",
+    "pk": 1,
+    "fields": {
+      "client_FK_id": "2"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Order",
+    "pk": 2,
+    "fields": {
+      "client_FK_id": "3"
+    }
+  },
+
+
+
+  {
+    "model": "PizzeriaUCAB.PizzaOrder",
+    "pk": 1,
+    "fields": {
+      "order_FK_id": "1",
+      "pizza_FK_id": "1"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaOrder",
+    "pk": 2,
+    "fields": {
+      "order_FK_id": "1",
+      "pizza_FK_id": "2"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaOrder",
+    "pk": 1,
+    "fields": {
+      "order_FK_id": "2",
+      "pizza_FK_id": "3"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaOrder",
+    "pk": 2,
+    "fields": {
+      "order_FK_id": "2",
+      "pizza_FK_id": "4"
+    }
+  },
+
+
+
+  {
+    "model": "PizzeriaUCAB.Pizza",
+    "pk": 1,
+    "fields": {
+      "size": "Grande",
+      "totalPrice": "80"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Pizza",
+    "pk": 2,
+    "fields": {
+      "size": "Grande",
+      "totalPrice": "110"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Pizza",
+    "pk": 3,
+    "fields": {
+      "size": "Personal",
+      "totalPrice": "70"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.Pizza",
+    "pk": 4,
+    "fields": {
+      "size": "Personal",
+      "totalPrice": "100"
+    }
+  },
+
+
+
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 1,
+    "fields": {
+      "pizza_FK_id": "1",
+      "ingredient_FK_id": "2"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 2,
+    "fields": {
+      "pizza_FK_id": "1",
+      "ingredient_FK_id": "3"
+    }
+  },
+
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 3,
+    "fields": {
+      "pizza_FK_id": "2",
+      "ingredient_FK_id": "4"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 4,
+    "fields": {
+      "pizza_FK_id": "2",
+      "ingredient_FK_id": "5"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 4,
+    "fields": {
+      "pizza_FK_id": "2",
+      "ingredient_FK_id": "2"
+    }
+  },
+
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 5,
+    "fields": {
+      "pizza_FK_id": "3",
+      "ingredient_FK_id": "2"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 6,
+    "fields": {
+      "pizza_FK_id": "3",
+      "ingredient_FK_id": "3"
+    }
+  },
+  
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 7,
+    "fields": {
+      "pizza_FK_id": "4",
+      "ingredient_FK_id": "4"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 8,
+    "fields": {
+      "pizza_FK_id": "4",
+      "ingredient_FK_id": "5"
+    }
+  },
+  {
+    "model": "PizzeriaUCAB.PizzaIngredient",
+    "pk": 9,
+    "fields": {
+      "pizza_FK_id": "4",
+      "ingredient_FK_id": "2"
+    }
+  }
+
+]
