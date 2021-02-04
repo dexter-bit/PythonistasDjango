@@ -47,6 +47,7 @@ class Ingredient(View):
         #    cursor.execute("SELECT * FROM 'Pizza' as P,'Ingredient' as I,'PizzaIngredient' as PI,'Client' as C,'Order' as O,'PizzaOrder' as PO WHERE O.id=PO.order_FK and PO.pizza_FK = P.id and P.id=PI.pizza_FK and PI.ingredient_FK=I.id")
         #    row1 = cursor.fetchone()
 
+        pizzas = PizzaModel.objects.all()
         ingredients = IngredientModel.objects.all()
         clients = Client.objects.all()
         orders = OrderModel.objects.all()
@@ -55,7 +56,7 @@ class Ingredient(View):
             'ingredients':ingredients,
             'clients':clients,
             'orders':orders,
-            #'report':row1,
+            'pizzas':pizzas,
             'form':form,
         }
         print(IngredientModel.objects.all())

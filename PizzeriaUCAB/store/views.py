@@ -5,16 +5,35 @@ from PizzeriaUCAB.models import Client, Pizza, Order, PizzaIngredient, Ingredien
 
 
 # Create your views here.
+itemsArray = []
+isItemsArray = False
 
+class Item:            
+       def __init__(self, client, size, ingredients, price):      
+               self.client = client                 
+               self.size = size
+               self.ingredients = ingredients                 
+               self.price = price
 
 def index(request):
 
+    global isItemsArray
+    global itemsArray
+
+    context_dict = {
+        'isItemsArray': isItemsArray,
+        'itemsArray': itemsArray
+    }
+
     return render(
         request,
-        'index.html'
+        'index.html',
+        context_dict
     )
 
 def agregar(request):
+
+    global isItemsArray
 
     if request.method == 'POST':
         client_name = request.POST['client_name']
@@ -53,50 +72,55 @@ def agregar(request):
         pizzaOrder.order_FK = order
         pizzaOrder.save()
 
+        ingredientsArray = []
         if jamon_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Jamon")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif pimenton_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Pimenton")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif queso_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Queso")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif champ_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Champiñon")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif aceituna_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Aceitunas")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif pepperoni_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Pepperoni")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
         elif salami_input != 0:
             ingrediente = PizzaIngredient()
             ingrediente.ingredient_FK = Ingredient.objects.get(name="Salami")
             ingrediente.pizza_FK = pizza
             ingrediente.save()
+            ingredientsArray.append(ingrediente)
 
-        print(tamano_input)
-        print(jamon_input)
-        print(salami_input)
-        print(queso_input)
-        print(champ_input)
-        print(pimenton_input)
-        print(pepperoni_input)
-        print(aceituna_input)
+        print(ingredientsArray)
+
+        item = Item(client=cliente, size=tamano_input, ingredients=ingredientsArray, price=precioTotal)
+        itemsArray.append(item)
+        isItemsArray = True
 
         return redirect('/')
     

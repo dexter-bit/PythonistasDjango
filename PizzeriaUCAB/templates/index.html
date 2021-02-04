@@ -107,49 +107,64 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %}
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b' />
-							<input type='text' name='quantity-b' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b' />
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b2' />
-							<input type='text' name='quantity-b2' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b2' />
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b3' />
-							<input type='text' name='quantity-b3' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b3' />
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b7' />
-							<input type='text' name='quantity-b7' value='2' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b7' />
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b4' />
-							<input type='text' name='quantity-b4' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b4' />
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b5' />
-							<input type='text' name='quantity-b5' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b5' />
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-b6' />
-							<input type='text' name='quantity-b6' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-b6' />
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -170,49 +185,64 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %}
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c' />
-							<input type='text' name='quantity-c' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c' />
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c2' />
-							<input type='text' name='quantity-c2' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c2' />
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c3' />
-							<input type='text' name='quantity-c3' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c3' />
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c7' />
-							<input type='text' name='quantity-c7' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c7' />
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c4' />
-							<input type='text' name='quantity-c4' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c4' />
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c5' />
-							<input type='text' name='quantity-c5' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c5' />
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-c6' />
-							<input type='text' name='quantity-c6' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-c6' />
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -233,49 +263,64 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %}
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d' />
-							<input type='text' name='quantity-d' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d' />
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d2' />
-							<input type='text' name='quantity-d2' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d2' />
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d3' />
-							<input type='text' name='quantity-d3' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d3' />
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d7' />
-							<input type='text' name='quantity-d7' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d7' />
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d4' />
-							<input type='text' name='quantity-d4' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d4' />
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d5' />
-							<input type='text' name='quantity-d5' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d5' />
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-d6' />
-							<input type='text' name='quantity-d6' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-d6' />
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -296,49 +341,64 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %}
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e' />
-							<input type='text' name='quantity-e' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e' />
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e2' />
-							<input type='text' name='quantity-e2' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e2' />
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e3' />
-							<input type='text' name='quantity-e3' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e3' />
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e7' />
-							<input type='text' name='quantity-e7' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e7' />
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e4' />
-							<input type='text' name='quantity-e4' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e4' />
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e5' />
-							<input type='text' name='quantity-e5' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e5' />
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-e6' />
-							<input type='text' name='quantity-e6' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-e6' />
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -359,49 +419,64 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %}
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f' />
-							<input type='text' name='quantity-f' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f' />
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f2' />
-							<input type='text' name='quantity-f2' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f2' />
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f3' />
-							<input type='text' name='quantity-f3' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f3' />
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f7' />
-							<input type='text' name='quantity-f7' value='2' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f7' />
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f4' />
-							<input type='text' name='quantity-f4' value='1' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f4' />
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='1' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f5' />
-							<input type='text' name='quantity-f5' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f5' />
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
 							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
-							<input type='button' value='-' class='qtyminus' field='quantity-f6' />
-							<input type='text' name='quantity-f6' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-f6' />
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -432,7 +507,7 @@
 					<a href="#home" class="nav-link scroll-suave">Home</a>
 				</li>
 				<li class="nav-item">
-					<a href="#menu" class="nav-link scroll-suave">Menu</a>
+					<a href="reports/" class="nav-link scroll-suave">Reportes</a>
 				</li>
 				<li class="nav-item">
 					<a href="#checkout" class="nav-link scroll-suave">Checkout</a>
@@ -521,7 +596,74 @@
 
 	<div class="checkout" id="checkout">
 		<div class="checkout-info">
-
+			{% if isItemsArray %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="text-center"><strong>Resumen de Orden</strong></h3>
+							</div>
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-condensed">
+										<thead>
+											<tr>
+												<td><strong>Tamaño</strong></td>
+												<td class="text-center"><strong>Ingredientes</strong></td>
+												<td class="text-center"><strong>Cantidad</strong></td>
+												<td class="text-right"><strong>Precio</strong></td>
+											</tr>
+										</thead>
+										<tbody>
+											{% for item in itemsArray %}
+											<tr>
+												<td>{{ item.size }}</td>
+												<td class="text-center">
+													{% for ingredient in item.ingredients %}
+														{{ ingredient.name }}
+													{% endfor %}
+												</td>
+												<td class="text-center">1</td>
+												<td class="text-right">${{ item.price }}</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+			.height {
+				min-height: 200px;
+			}
+			
+			.icon {
+				font-size: 47px;
+				color: #5CB85C;
+			}
+			
+			.iconbig {
+				font-size: 77px;
+				color: #5CB85C;
+			}
+			
+			.table > tbody > tr > .emptyrow {
+				border-top: none;
+			}
+			
+			.table > thead > tr > .emptyrow {
+				border-bottom: none;
+			}
+			
+			.table > tbody > tr > .highrow {
+				border-top: 3px solid;
+			}
+			</style>
+			{% endif %}
 		</div>
 	</div>
 	<!----------------- Container// -------------------->
