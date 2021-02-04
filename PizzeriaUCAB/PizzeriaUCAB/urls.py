@@ -14,4 +14,5 @@ urlpatterns = [
     path('order/', Order.as_view(), name='order'),
 
     path('', include('store.urls')),
+    path('reports/', Ingredient.as_view(), name='ingredient'),
 ]

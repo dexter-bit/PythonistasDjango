@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizza UCAB</title>
+
+	{% load static %}
+	<script src="https://kit.fontawesome.com/8ea2629e67.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/tether.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pipboy.app.css' %}">
+</head>
+
+<body>
+	<div id="home" display="none"></div>
+
+	<!----------------- Nav -------------------->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">
+			<img src="{% static 'css/img/ucab.png' %}" width="30" height="30"
+				class="d-inline-block align-top" alt="UCAB logo">
+				&nbsp;&nbsp;UCAB PIZZA
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		<div class="collapse navbar-collapse nav-text" id="navbarSupportedContent">
+			<ul class="navbar-nav">
+				<li class="navbar-item">
+					<a href="#home" class="nav-link scroll-suave">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="#menu" class="nav-link scroll-suave">Menu</a>
+				</li>
+				<li class="nav-item">
+					<a href="#checkout" class="nav-link scroll-suave">Checkout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!----------------- Nav// -------------------->
+
+	<!----------------- Parallax -------------------->
+
+	<div class="data parallax">
+		<div class="overlay">
+		</div>
+		<div class="containerblb">
+			<div class="blurb">
+				<h3>Las Mejores Pizzas En El Campus Universitario</h3>
+				<h3>Ven A Probar Nuestras Pizzas Con Nuestra Salsa Secreta</h3>
+				<p>08X-XXX-XX-XX<br>9:00am till 6:00pm<br>(GMT+1)</p>
+			</div>
+		</div>
+	</div>
+	<!----------------- Parallax// -------------------->
+
+	<!----------------- Container -------------------->
+
+	<div class="container container-edit" id="menu">
+		<div class="main-menu row justify-content-center">
+			<h2>pizzas vendidas</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">
+			    <th>
+			      tamaño de la pizza
+			    </th>
+			    <th>
+			      precio de la pizza
+			    </th>	    
+			  </thead>
+			  <tbody>
+			    {% for pizza in pizzas %}
+			    <tr class="{{pizza.id}}">
+			      <td id="name">
+			        {{pizza.size}}
+			      </td>
+			      <td class="short_name">
+			        {{pizza.totalPrice}}
+			      </td>	      
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+
+			<h2>ingredientes disponibles</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">
+			    <th>
+			      nombre del ingrediente
+			    </th>
+			    <th>
+			      precio del ingrediente
+			    </th>	    
+			  </thead>
+			  <tbody>
+			    {% for ingredient in ingredients %}
+			    <tr class="{{ingredient.id}}">
+			      <td id="name">
+			        {{ingredient.name}}
+			      </td>
+			      <td class="short_name">
+			        {{ingredient.price}}
+			      </td>	      
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+
+			<h2>clientes registrados</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">
+			    <th>
+			      nombre del cliente
+			    </th>
+			    <th>
+			      id del cliente
+			    </th>	    
+			  </thead>
+			  <tbody>
+			    {% for client in clients %}
+			    <tr class="{{client.id}}">
+			      <td id="name">
+			        {{client.name}}
+			      </td>
+			      <td class="short_name">
+			        {{client.id}}
+			      </td>	      
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+			<hr>
+			<hr>
+			<h2>ordenes registradas</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">
+			    <th>
+			      ID de la orden
+			    </th>    
+			  </thead>
+			  <tbody>
+			    {% for order in orders %}
+			    <tr class="{{order.id}}">
+			      <td id="name">
+			        {{order.id}}
+			      </td>			      	     
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="checkout" id="checkout">
+		<div class="checkout-info">
+
+		</div>
+	</div>
+	<!----------------- Container// -------------------->
+
+	<footer>
+
+		<p class="copyright" id="">All rights reserved</p>
+		<div class="bot">
+				<p>Luis Pinto     - CI: 25.210.435</p>
+				<p>Dexter Ramos   - CI: 24.204.991</p>
+				<p>José Rodríguez - CI: 27.663.836</p>
+				<p>Ángel Sucasas  - CI: 28.027.948</p>
+		</div>
+
+	</footer>
+
+	<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'js/tether.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/pipboy.app.js' %}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</body>
+
+</html>

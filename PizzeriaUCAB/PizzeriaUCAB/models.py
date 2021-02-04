@@ -2,6 +2,10 @@ from django.db import models
 from django.conf import settings
 
 class Pizza(models.Model):
+	def __str__(self):
+		return self.totalPrice
+
+	objects = models.Manager()
 	totalPrice = models.IntegerField(
 		default=0
 	)
@@ -11,6 +15,9 @@ class Pizza(models.Model):
 	)
 
 class Ingredient(models.Model):
+	def __str__(self):
+		return self.name
+
 	objects = models.Manager()
 	name = models.CharField(
 		max_length=50

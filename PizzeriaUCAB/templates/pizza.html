@@ -10,6 +10,28 @@
 		<p>hola desde pizza!</p>
 		<input type="text" name="ejemplo" id="ejemplo">
 		<button type="submit">Subir</button>
-	</form>	
+	</form>
+	<table id="table_all_coins" class="table" style="background-color: yellow">
+	  <thead class=" text-primary">
+	    <th>
+	      Name
+	    </th>
+	    <th>
+	      Short Name
+	    </th>	    
+	  </thead>
+	  <tbody>
+	    {% for ingredient in ingredients %}
+	    <tr class="{{pizza.id}}">
+	      <td id="name">
+	        {{ingredient.name}}
+	      </td>
+	      <td class="short_name">
+	        {{ingredient.price}}
+	      </td>	      
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+	</table>	
 </body>
 </html>

@@ -10,25 +10,58 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
+from django_datatables_view.base_datatable_view import BaseDatatableView
 
 ###from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
-from .models import Pizza, PizzaIngredient, Ingredient, PizzaOrder, Client
+from .models import Pizza as PizzaModel, PizzaIngredient, Ingredient as IngredientModel, PizzaOrder, Client, Order as OrderModel
 from .forms import PizzaForm
+from django.db import connection
+
+def my_custom_sql(self):
+    with connection.cursor() as cursor:
+        cursor.execute("UPDATE bar SET foo = 1 WHERE baz = %s", [self.baz])
+        cursor.execute("SELECT foo FROM bar WHERE baz = %s", [self.baz])
+        row = cursor.fetchone()
+
+    return row
 
 def products(request):
     return render(request, 'pizza.html')
 
+    #return row
+    #pizzas vendidas
+    #ingredientes de esas pizzas
+    #precio de la pizza
+    #quien pidio la pizza
+
+    #ingredientes disponibles
+
+    #clientes registrados
+
+    #ordenes registradas
+
 class Ingredient(View):
     def get(self,request):
-        form = PizzaForm(request.POST or None)        
-        
+        form = PizzaForm(request.POST or None)
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM 'Pizza' as P,'Ingredient' as I,'PizzaIngredient' as PI,'Client' as C,'Order' as O,'PizzaOrder' as PO WHERE O.id=PO.order_FK and PO.pizza_FK = P.id and P.id=PI.pizza_FK and PI.ingredient_FK=I.id")
+            row1 = cursor.fetchone()
+
+        ingredients = IngredientModel.objects.all()
+        clients = Client.objects.all()
+        orders = OrderModel.objects.all()
         context={
             'form':form,
-            #'ingredients':Ingredient.objects.all(),
+            'ingredients':ingredients,
+            'clients':clients,
+            'orders':orders,
+            #'report':row1,
+            'form':form,
         }
+        print(IngredientModel.objects.all())
         return render(
             self.request,
-            'pizza.html',
+            'reports.html',
             context
         )
     def post(self,request):
@@ -50,7 +83,7 @@ class Pizza(View):
         
         context={
             'form':form,
-            #'Pizzas':Pizza.objects.all(),
+            'pizzas':PizzaModel.objects.all()
         }
         return render(
             self.request,
@@ -77,7 +110,7 @@ class Order(View):
         
         context={
             'form':form,
-            #'orders':Order.objects.all(),
+            'orders':OrderModel.objects.all(),
         }
         return render(
             self.request,
@@ -97,3 +130,4 @@ class Order(View):
             'pizza.html',
             context
         )
+
