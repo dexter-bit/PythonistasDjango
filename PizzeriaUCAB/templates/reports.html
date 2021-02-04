@@ -21,7 +21,7 @@
 	<!----------------- Nav -------------------->
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="../">
 			<img src="{% static 'css/img/ucab.png' %}" width="30" height="30"
 				class="d-inline-block align-top" alt="UCAB logo">
 				&nbsp;&nbsp;UCAB PIZZA
@@ -53,9 +53,7 @@
 		</div>
 		<div class="containerblb">
 			<div class="blurb">
-				<h3>Las Mejores Pizzas En El Campus Universitario</h3>
-				<h3>Ven A Probar Nuestras Pizzas Con Nuestra Salsa Secreta</h3>
-				<p>08X-XXX-XX-XX<br>9:00am till 6:00pm<br>(GMT+1)</p>
+				<h1>Bienvenido administrador Pizzero!</h1>
 			</div>
 		</div>
 	</div>
@@ -69,6 +67,9 @@
 			<table id="table_all_coins" class="table">				
 			  	<thead class=" text-primary">
 			    <th>
+			      id de la pizza
+			    </th>
+			    <th>
 			      tamaño de la pizza
 			    </th>
 			    <th>
@@ -78,6 +79,9 @@
 			  <tbody>
 			    {% for pizza in pizzas %}
 			    <tr class="{{pizza.id}}">
+			      <td id="name">
+			        {{pizza.id}}
+			      </td>
 			      <td id="name">
 			        {{pizza.size}}
 			      </td>
@@ -93,6 +97,9 @@
 			<table id="table_all_coins" class="table">				
 			  	<thead class=" text-primary">
 			    <th>
+			      id del ingrediente
+			    </th>
+			    <th>
 			      nombre del ingrediente
 			    </th>
 			    <th>
@@ -102,6 +109,9 @@
 			  <tbody>
 			    {% for ingredient in ingredients %}
 			    <tr class="{{ingredient.id}}">
+			      <td id="name">
+			        {{ingredient.id}}
+			      </td>
 			      <td id="name">
 			        {{ingredient.name}}
 			      </td>
@@ -155,6 +165,60 @@
 			    {% endfor %}
 			  </tbody>
 			</table>
+
+			<h2>Ingredientes de las pizza</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">
+			    <th>
+			      ID de la pizza
+			    </th>
+			    <th>
+			      ingrediente
+			    </th>
+			    <th>
+			      precio de la pizza
+			    </th>
+			  </thead>
+			  <tbody>
+			    {% for pi in pis %}
+			    <tr class="{{pi.id}}">
+			      <td id="name">
+			        {{pi.pizza_FK.id}}
+			      </td>
+			      <td id="name">
+			        {{pi.ingredient_FK.name}}
+			      </td>
+			      <td id="name">
+			        {{pi.pizza_FK.totalPrice}}
+			      </td>
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+
+			<h2>pizzas por ordenes</h2>
+			<table id="table_all_coins" class="table">				
+			  	<thead class=" text-primary">			    
+			    <th>
+			      ID de la orden
+			    </th><th>
+			      ID de la pizza
+			    </th>    
+			  </thead>
+			  <tbody>
+			    {% for po in pos %}
+			    <tr class="{{order.id}}">			      
+			      <td id="name">
+			        {{po.order_FK.id}}
+			      </td>
+			      <td id="name">
+			        {{po.pizza_FK.id}}
+			      </td>		
+			    </tr>
+			    {% endfor %}
+			  </tbody>
+			</table>
+
 		</div>
 	</div>
 
