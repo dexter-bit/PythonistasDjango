@@ -43,9 +43,9 @@ def products(request):
 class Ingredient(View):
     def get(self,request):
         form = PizzaForm(request.POST or None)
-        with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM 'Pizza' as P,'Ingredient' as I,'PizzaIngredient' as PI,'Client' as C,'Order' as O,'PizzaOrder' as PO WHERE O.id=PO.order_FK and PO.pizza_FK = P.id and P.id=PI.pizza_FK and PI.ingredient_FK=I.id")
-            row1 = cursor.fetchone()
+        #with connection.cursor() as cursor:
+        #    cursor.execute("SELECT * FROM 'Pizza' as P,'Ingredient' as I,'PizzaIngredient' as PI,'Client' as C,'Order' as O,'PizzaOrder' as PO WHERE O.id=PO.order_FK and PO.pizza_FK = P.id and P.id=PI.pizza_FK and PI.ingredient_FK=I.id")
+        #    row1 = cursor.fetchone()
 
         ingredients = IngredientModel.objects.all()
         clients = Client.objects.all()

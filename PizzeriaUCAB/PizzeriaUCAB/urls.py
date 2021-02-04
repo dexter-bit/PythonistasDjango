@@ -15,4 +15,5 @@ urlpatterns = [
 
     path('', include('store.urls')),
     path('reports/', Ingredient.as_view(), name='ingredient'),
+    path('agregar/', include('store.urls'))
 ]

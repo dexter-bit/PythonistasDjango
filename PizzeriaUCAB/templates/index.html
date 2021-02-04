@@ -24,59 +24,74 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Crea Tu Propia Pizza</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="target" action="destination.html">
+				<form method="POST" action="agregar/">
+					{% csrf_token %} 
 					<div class="modal-body">
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Nombre del Cliente</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="client_name" aria-describedby="basic-addon3">
+							</div>
+						</div>
+						<div class="m-3">
+							<label class="form-check-label" for="tamano_input">Tamaño</label>
+							<select class="form-control" name="tamano_input">
+							  <option>Personal</option>
+							  <option>Mediana</option>
+							  <option>Grande</option>
+							</select>
+						  </div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a' />
-							<input type='text' name='quantity-a' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a' />
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
+							<input type='button' value='-' class='qtyminus' field='jamon_input' />
+							<input type='text' name='jamon_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='jamon_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a2' />
-							<input type='text' name='quantity-a2' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a2' />
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='champ_input' />
+							<input type='text' name='champ_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='champ_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a3' />
-							<input type='text' name='quantity-a3' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a3' />
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='pimenton_input' />
+							<input type='text' name='pimenton_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pimenton_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a7' />
-							<input type='text' name='quantity-a7' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a7' />
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='queso_input' />
+							<input type='text' name='queso_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='queso_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a4' />
-							<input type='text' name='quantity-a4' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a4' />
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='pepperoni_input' />
+							<input type='text' name='pepperoni_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='pepperoni_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a5' />
-							<input type='text' name='quantity-a5' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a5' />
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='aceituna_input' />
+							<input type='text' name='aceituna_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='aceituna_input' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
-							<input type='button' value='-' class='qtyminus' field='quantity-a6' />
-							<input type='text' name='quantity-a6' value='0' class='qty' />
-							<input type='button' value='+' class='qtyplus' field='quantity-a6' />
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
+							<input type='button' value='-' class='qtyminus' field='salami_input' />
+							<input type='text' name='salami_input' value='0' class='qty' />
+							<input type='button' value='+' class='qtyplus' field='salami_input' />
 						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -87,7 +102,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Margarita</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -95,43 +110,43 @@
 				<form id="target" action="destination.html">
 					<div class="modal-body">
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b' />
 							<input type='text' name='quantity-b' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b2' />
 							<input type='text' name='quantity-b2' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b2' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b3' />
 							<input type='text' name='quantity-b3' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b3' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b7' />
 							<input type='text' name='quantity-b7' value='2' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b7' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b4' />
 							<input type='text' name='quantity-b4' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b4' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b5' />
 							<input type='text' name='quantity-b5' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b5' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-b6' />
 							<input type='text' name='quantity-b6' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-b6' />
@@ -139,7 +154,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -150,7 +165,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Full House</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -158,43 +173,43 @@
 				<form id="target" action="destination.html">
 					<div class="modal-body">
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c' />
 							<input type='text' name='quantity-c' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c2' />
 							<input type='text' name='quantity-c2' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c2' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c3' />
 							<input type='text' name='quantity-c3' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c3' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c7' />
 							<input type='text' name='quantity-c7' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c7' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c4' />
 							<input type='text' name='quantity-c4' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c4' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c5' />
 							<input type='text' name='quantity-c5' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c5' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-c6' />
 							<input type='text' name='quantity-c6' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-c6' />
@@ -202,7 +217,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -213,7 +228,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Champimenton</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -221,43 +236,43 @@
 				<form id="target" action="destination.html">
 					<div class="modal-body">
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d' />
 							<input type='text' name='quantity-d' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d2' />
 							<input type='text' name='quantity-d2' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d2' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d3' />
 							<input type='text' name='quantity-d3' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d3' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d7' />
 							<input type='text' name='quantity-d7' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d7' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d4' />
 							<input type='text' name='quantity-d4' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d4' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d5' />
 							<input type='text' name='quantity-d5' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d5' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-d6' />
 							<input type='text' name='quantity-d6' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-d6' />
@@ -265,7 +280,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -276,7 +291,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Vegetariana</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -284,43 +299,43 @@
 				<form id="target" action="destination.html">
 					<div class="modal-body">
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e' />
 							<input type='text' name='quantity-e' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e2' />
 							<input type='text' name='quantity-e2' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e2' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e3' />
 							<input type='text' name='quantity-e3' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e3' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e7' />
 							<input type='text' name='quantity-e7' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e7' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e4' />
 							<input type='text' name='quantity-e4' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e4' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e5' />
 							<input type='text' name='quantity-e5' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e5' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-e6' />
 							<input type='text' name='quantity-e6' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-e6' />
@@ -328,7 +343,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -339,7 +354,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Quesoroni</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -347,43 +362,43 @@
 				<form id="target" action="destination.html">
 					<div class="modal-body">
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Jamon</label>
+							<label class="form-check-label" for="exampleCheck1">Jamon - $10 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f' />
 							<input type='text' name='quantity-f' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Champinnones</label>
+							<label class="form-check-label" for="exampleCheck1">Champiñones - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f2' />
 							<input type='text' name='quantity-f2' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f2' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pimenton</label>
+							<label class="form-check-label" for="exampleCheck1">Pimenton - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f3' />
 							<input type='text' name='quantity-f3' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f3' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Queso</label>
+							<label class="form-check-label" for="exampleCheck1">Queso - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f7' />
 							<input type='text' name='quantity-f7' value='2' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f7' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Pepperoni</label>
+							<label class="form-check-label" for="exampleCheck1">Pepperoni - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f4' />
 							<input type='text' name='quantity-f4' value='1' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f4' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Aceitunas</label>
+							<label class="form-check-label" for="exampleCheck1">Aceitunas - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f5' />
 							<input type='text' name='quantity-f5' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f5' />
 						</div>
 						<div class="form-group form-check">
-							<label class="form-check-label" for="exampleCheck1">Salchichon</label>
+							<label class="form-check-label" for="exampleCheck1">Salami - $30 </label>
 							<input type='button' value='-' class='qtyminus' field='quantity-f6' />
 							<input type='text' name='quantity-f6' value='0' class='qty' />
 							<input type='button' value='+' class='qtyplus' field='quantity-f6' />
@@ -391,7 +406,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<input type="submit" value="Save Changes" class="btn btn-primary">
+						<input type="submit" value="Agregar" class="btn btn-primary">
 					</div>
 				</form>
 			</div>
@@ -451,9 +466,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Crea Tu Propia Pizza</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-a">
 						Ordenar Pizza
 					</button>
@@ -463,9 +475,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Margarita</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-b">
 						Ordenar Pizza
 					</button>
@@ -475,9 +484,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Full House</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-c">
 						Ordenar Pizza
 					</button>
@@ -487,9 +493,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Champimenton</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-d">
 						Ordenar Pizza
 					</button>
@@ -499,9 +502,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Vegetariana</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-e">
 						Ordenar Pizza
 					</button>
@@ -511,9 +511,6 @@
 				<img class="card-img-top" src="{% static 'css/pp.jpg' %}" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Quesoroni</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-						the
-						card's content.</p>
 					<button type="button" class="btn btn-primary center-btn" data-toggle="modal" data-target="#exampleModal-f">
 						Ordenar Pizza
 					</button>

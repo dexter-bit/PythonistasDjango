@@ -1,5 +1,5 @@
 from django import forms
-from .models import Pizza, PizzaIngredient, Ingredient, PizzaOrder, Client
+from .models import Pizza, PizzaIngredient, Ingredient, PizzaOrder, Client, Order
 
 class PizzaForm(forms.Form):
 	class Meta:
@@ -10,3 +10,7 @@ class PizzaForm(forms.Form):
 		]
 	shipping_address = forms.CharField(required=False)
 	shipping_address2 = forms.CharField(required=False)
+
+	
+
+	
