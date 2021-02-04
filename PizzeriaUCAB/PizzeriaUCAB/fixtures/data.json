@@ -11,7 +11,7 @@
     "model": "PizzeriaUCAB.Ingredient",
     "pk": 2,
     "fields": {
-      "name": "Maiz",
+      "name": "Pimenton",
       "price": 30
     }
   },
@@ -35,7 +35,7 @@
     "model": "PizzeriaUCAB.Ingredient",
     "pk": 5,
     "fields": {
-      "name": "Aceite",
+      "name": "Aceitunas",
       "price": 30
     }
   },

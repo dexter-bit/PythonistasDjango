@@ -14,4 +14,5 @@ urlpatterns = [
     path('order/', Order.as_view(), name='order'),
 
     path('', include('store.urls')),
+    path('agregar/', include('store.urls'))
 ]
